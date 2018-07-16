@@ -1,0 +1,26 @@
+{
+  "name": "new-nitxbot",
+  "version": "1.0.0",
+  "description": "New iteration of Nitxbot for Discord",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarimA/new-nitxbot.git"
+  },
+  "keywords": [
+    "Discord",
+    "Discord.js",
+    "Bot",
+    "Chat",
+    "Chatbot"
+  ],
+  "author": "Carim A",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarimA/new-nitxbot/issues"
+  },
+  "homepage": "https://github.com/CarimA/new-nitxbot#readme"
+}
