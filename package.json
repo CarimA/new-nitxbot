@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/CarimA/new-nitxbot/issues"
   },
-  "homepage": "https://github.com/CarimA/new-nitxbot#readme"
+  "homepage": "https://github.com/CarimA/new-nitxbot#readme",
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  }
 }
