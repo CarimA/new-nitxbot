@@ -58,7 +58,8 @@ function toCommand(text, cb) {
 }
 
 client.on('ready', () => {
-    log(`I am ready to do stuff!`);
+    log(`Starting up...`);
+    client.user.setPresence({ status: 'online', game: { name: 'v0.0.3' } });
 });
 
 client.on('message', (msg) => {
@@ -161,4 +162,5 @@ client.login(token).then(() => {
         }
     });
     log('Finished loading plugins.');   
+    log(`I am ready to do stuff!`);
 });
