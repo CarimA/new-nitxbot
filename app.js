@@ -164,3 +164,15 @@ client.login(token).then(() => {
     log('Finished loading plugins.');   
     log(`I am ready to do stuff!`);
 });
+
+let express = require('express');
+let http = require('http');
+let app = express();
+let server = http.Server(app);
+
+app.get('/', (request, response, next) => {
+    response.send('Nothing here!');
+});
+
+let port = process.env.PORT || 3000;
+server.listen(port);

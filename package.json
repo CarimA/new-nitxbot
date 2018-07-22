@@ -27,6 +27,7 @@
     "decache": "^4.4.0",
     "discord.js": "latest",
     "on-file-change": "^0.1.0",
-    "require-dir": "^1.0.0"
+    "require-dir": "^1.0.0",
+    "express": "latest"
   }
 }
