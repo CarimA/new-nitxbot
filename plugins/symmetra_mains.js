@@ -14,6 +14,13 @@ var id_role_xbo =       '468537291875418143';
 
 var id_role_assign_message = '';
 
+var emoji_eu_flag = '🇪🇺';
+var emoji_us_flag = '🇺🇸';
+var emoji_kr_flag = '🇰🇷';
+var emoji_pc = '🖥';
+var emoji_ps = '🇵';
+var emoji_xb = '🇽';
+
 module.exports = {
     init: (client) => {
         // clear out role assign channel
@@ -21,12 +28,12 @@ module.exports = {
             client.channels.get(id_room_role).send("Hello! Welcome to Symmetra Mains. Here, we have a few extra roles used to differentiate roles for Overwatch's server regions and platforms, which may be used to find users for games or matchmaking purposes. In order to assign a role to yourself, you need to react to this message.\r\n\r\nReact with :flag_eu: to be assigned the Europe region role.\r\nReact with :flag_us: to be assigned the Americas region role.\r\nReact with :flag_kr: to be assigned the Asia region role.\r\n\r\nReact with :desktop: to be assigned the PC platform role.\r\nReact with :regional_indicator_p: to be assigned the PlayStation 4 platform role.\r\nReact with :regional_indicator_x: to be assigned the Xbox One platform role.\r\n\r\nWhile members can have any of these roles assign, please only assign roles that are actually applicable to you.\r\nIf you want a role unassigned, simply unreact (You may need to react and unreact!).").then((msg) => {
                 id_role_assign_message = msg.id;
 
-                msg.react('🇪🇺').then(() => {
-                    msg.react('🇺🇸').then(() => {
-                        msg.react('🇰🇷').then(() => {
-                            msg.react('🖥').then(() => {
-                                msg.react('🇵').then(() => {
-                                    msg.react('🇽');
+                msg.react(emoji_eu_flag).then(() => {
+                    msg.react(emoji_us_flag).then(() => {
+                        msg.react(emoji_kr_flag).then(() => {
+                            msg.react(emoji_pc).then(() => {
+                                msg.react(emoji_ps).then(() => {
+                                    msg.react(emoji_xb);
                                 });
                             });
                         });
@@ -46,22 +53,22 @@ module.exports = {
                 console.log(emoji);
                 let u = client.guilds.get(id_server).members.get(user.id);
                 switch (emoji) {
-                    case '🇪🇺': 
+                    case emoji_eu_flag: 
                         u.addRole(id_role_europe);
                         break;
-                    case '🇺🇸':
+                    case emoji_us_flag:
                         u.addRole(id_role_americas);
                         break;
-                    case '🇰🇷':
+                    case emoji_kr_flag:
                         u.addRole(id_role_asia);
                         break;
-                    case '🖥': 
+                    case emoji_pc: 
                         u.addRole(id_role_pc);    
                         break;
-                    case '🇵':
+                    case emoji_ps:
                         u.addRole(id_role_ps4);    
                         break;
-                    case '🇽':
+                    case emoji_xb:
                         u.addRole(id_role_xbo);    
                         break;
                 }
@@ -77,22 +84,22 @@ module.exports = {
                 let emoji = reaction.emoji.name;
                 let u = client.guilds.get(id_server).members.get(user.id);
                 switch (emoji) {
-                    case '🇪🇺': 
+                    case emoji_eu_flag: 
                         u.removeRole(id_role_europe);
                         break;
-                    case '🇺🇸':
+                    case emoji_us_flag:
                         u.removeRole(id_role_americas);
                         break;
-                    case '🇰🇷':
+                    case emoji_kr_flag:
                         u.removeRole(id_role_asia);
                         break;
-                    case '🖥': 
+                    case emoji_pc: 
                         u.removeRole(id_role_pc);    
                         break;
-                    case 'platform_ps4':
+                    case emoji_ps:
                         u.removeRole(id_role_ps4);    
                         break;
-                    case 'platform_xbox':
+                    case emoji_xb:
                         u.removeRole(id_role_xbo);    
                         break;
                 }
