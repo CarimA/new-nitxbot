@@ -28,27 +28,21 @@ module.exports = {
         client.channels.get(id_room_role).bulkDelete(100).then(() => {
             // send a message with introduction
             client.channels.get(id_room_role).send(intro_message)
-                .then((msg) => {
+                .then((msg) => {    
                     id_role_assign_message = msg.id;
-                    
-                    // react with emoji in order to stop people from locking themselves out
-                    msg.react(emoji_eu_flag)
-                        .then((msg) => {
-                            msg.react(emoji_us_flag);
-                        })
-                        .then((msg) => {
-                            msg.react(emoji_kr_flag);
-                        })
-                        .then((msg) => {
-                            msg.react(emoji_pc);
-                        })
-                        .then((msg) => {
-                            msg.react(emoji_ps);
-                        })
-                        .then((msg) => {
-                            msg.react(emoji_xb);
+
+                    msg.react(emoji_eu_flag).then(() => {
+                        msg.react(emoji_us_flag).then(() => {
+                            msg.react(emoji_kr_flag).then(() => {
+                                msg.react(emoji_pc).then(() => {
+                                    msg.react(emoji_ps).then(() => {
+                                        msg.react(emoji_xb);
+                                    });
+                                });
+                            });
                         });
-                });
+                    });
+            });
         });
 
         // reacts
