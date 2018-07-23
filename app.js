@@ -59,7 +59,7 @@ function toCommand(text, cb) {
 
 client.on('ready', () => {
     log(`Starting up...`);
-    client.user.setPresence({ status: 'online', game: { name: 'v0.0.3' } });
+    client.user.setPresence({ status: 'online', game: { name: 'with v3.0.0' } });
 });
 
 client.on('message', (msg) => {
